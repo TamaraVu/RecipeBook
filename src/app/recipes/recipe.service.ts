@@ -8,28 +8,35 @@ import {Subject} from 'rxjs';
 export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
 
-  private recipes: Recipe[] = [
-    new Recipe(
-      'A Test Recipe',
-      'This is simply a test',
-      'https://media.self.com/photos/5f1eef2914b005b8d8eba4d0/4:3/w_384/30-Minute-Roasted-Vegetable-Tacos-with-Chimichurri-BIG-flavor-satisfying-HEALTHY-vegan-glutenfree-plantbased-tacos-chimichurri-cauliflower-minimalistbaker-recipe-6.jpg',
-      [
-        new Ingredient('Meat', 1),
-        new Ingredient('French Fries', 20)
-      ]
-    ),
-    new Recipe(
-      'Another Test Recipe',
-      'This is simply a test',
-      'https://media.self.com/photos/5f1eef2914b005b8d8eba4d0/4:3/w_384/30-Minute-Roasted-Vegetable-Tacos-with-Chimichurri-BIG-flavor-satisfying-HEALTHY-vegan-glutenfree-plantbased-tacos-chimichurri-cauliflower-minimalistbaker-recipe-6.jpg',
-      [
-        new Ingredient('Buns', 2),
-        new Ingredient('Meat', 1)
-      ]
-    )
-  ];
+  // private recipes: Recipe[] = [
+  //  new Recipe(
+  //   'A Test Recipe',
+  //  'This is simply a test',
+  //  'https://media.self.com/photos/5f1eef2914b005b8d8eba4d0/4:3/w_384/30-Minute-Roasted-Vegetable-Tacos-with-Chimichurri-BIG-flavor-satisfying-HEALTHY-vegan-glutenfree-plantbased-tacos-chimichurri-cauliflower-minimalistbaker-recipe-6.jpg',
+  //  [
+  //    new Ingredient('Meat', 1),
+  //    new Ingredient('French Fries', 20)
+  // ]
+  // ),
+  // new Recipe(
+  //  'Another Test Recipe',
+  // 'This is simply a test',
+  // 'https://media.self.com/photos/5f1eef2914b005b8d8eba4d0/4:3/w_384/30-Minute-Roasted-Vegetable-Tacos-with-Chimichurri-BIG-flavor-satisfying-HEALTHY-vegan-glutenfree-plantbased-tacos-chimichurri-cauliflower-minimalistbaker-recipe-6.jpg',
+  //  [
+  //    new Ingredient('Buns', 2),
+  //    new Ingredient('Meat', 1)
+  //  ]
+  // )
+  // ];
+  private recipes: Recipe[] = [];
 
   constructor(private slService: ShoppingListService) {
+  }
+
+  // tslint:disable-next-line:typedef
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
   }
 
   // tslint:disable-next-line:typedef

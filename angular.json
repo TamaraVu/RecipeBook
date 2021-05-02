@@ -126,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "angular-pro"
+  "defaultProject": "angular-pro",
+  "cli": {
+    "analytics": false
+  }
 }
