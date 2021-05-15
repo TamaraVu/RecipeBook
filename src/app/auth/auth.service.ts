@@ -27,7 +27,7 @@ export class AuthService {
   // tslint:disable-next-line:typedef
   signup(email: string, password: string) {
     return this.http.post<AuthResponseData>(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCqqX3_fMiDoc0IgfMyoQcr4YlgxXLNXBE',
+      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCIBsJyk9DpoT-__j25eFaMBNNSV5Y1xM0',
       {
         email,
         password,
@@ -47,7 +47,7 @@ export class AuthService {
   // tslint:disable-next-line:typedef
   login(email: string, password: string) {
     return this.http.post<AuthResponseData>(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCqqX3_fMiDoc0IgfMyoQcr4YlgxXLNXBE',
+      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCIBsJyk9DpoT-__j25eFaMBNNSV5Y1xM0',
       {
         email,
         password,
