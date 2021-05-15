@@ -15,7 +15,7 @@ export class DataStorageService {
   // tslint:disable-next-line:typedef
   storeRecipes() {
     const recipes = this.recipeService.getRecipes();
-    return this.http.put('https://new-project-555dd-default-rtdb.firebaseio.com/recipes.json', recipes)
+    return this.http.put('https://angular-pro-b865c-default-rtdb.firebaseio.com/recipes.json', recipes)
       .subscribe(response => {
         console.log(response);
       });
@@ -24,7 +24,7 @@ export class DataStorageService {
   // tslint:disable-next-line:typedef
   fetchRecipes() {
     return this.http.get<Recipe[]>(
-      'https://new-project-555dd-default-rtdb.firebaseio.com/recipes.json',
+      'https://angular-pro-b865c-default-rtdb.firebaseio.com/recipes.json',
     ).pipe(
       map(recipes => {
         return recipes.map(recipe => {
